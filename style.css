@@ -1,0 +1,252 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.logo-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.logo-input img {
+    width: 40px;
+}
+
+.logo-input input {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: rgba(82, 82, 82, 0.3);
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    outline: 0;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.right .explore {
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.right a:nth-child(2),
+.right a:nth-child(3) {
+    font-size: .8rem;
+}
+
+main {
+    padding: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.library {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(27, 27, 27);
+}
+
+.library .create-playlist {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(54, 54, 54);
+    margin-bottom: 20px;
+}
+
+.library .podcasts {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(54, 54, 54);
+
+}
+
+.library button {
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+}
+
+.songs-container {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(27, 27, 27);
+    min-width: calc(100% - 350px);
+}
+
+.songs-container ul {
+
+    overflow: scroll;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+}
+
+::-webkit-scrollbar {
+    background-color: black;
+    width: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: gray;
+    width: 5px;
+}
+
+.songs-container li {
+    list-style: none;
+    background-color: rgb(54, 54, 54);
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.songs-container li img {
+    filter: invert(1);
+    border-radius: 2px;
+}
+
+.songs-container li:hover {
+    background-color: rgb(71, 71, 71);
+}
+
+.playbar {
+    margin: 0 10px;
+    border-radius: 10px;
+    padding-inline: 5px;
+    padding-bottom: 10px;
+    background-color: rgb(27, 27, 27);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 80px;
+}
+
+.playbar .upper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playbar .name {
+    flex-grow: 0;
+}
+
+.playbar img {
+    padding: 2px;
+    filter: invert(1);
+}
+
+.seekbar {
+    margin: auto;
+    height: 4px;
+    width: 99%;
+    background-color: gray;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    position: relative;
+    top: -3px;
+}
+
+@media(min-width:800px) {
+    main {
+        height: 80%;
+    }
+
+    .library {
+        min-height: 100%;
+    }
+
+    .songs-container {
+        height: 100%;
+    }
+
+    .songs-container ul {
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    .playbar img {
+        margin-inline: 20px;
+    }
+}
+
+@media(max-width:800px) {
+    .logo-input input {
+        display: none;
+    }
+
+    main {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .library {
+        min-width: 100%;
+    }
+
+    .songs-container {
+        min-width: 100%;
+    }
+
+    .songs-container ul {
+        overflow: hidden;
+    }
+
+    .songs-container {
+        overflow-x: hidden;
+    }
+    .playbar .name{
+        width: 100px;
+        font-size: 8px;
+    }
+}
